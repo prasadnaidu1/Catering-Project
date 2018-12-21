@@ -1,0 +1,114 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<form  action="/itemdetails/" method="post">
+    {% csrf_token %}
+<fieldset>
+
+<!-- Form Name -->
+    <legend align="center"> <font size="6" face="Algerian" >Items</font></legend>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="item_id">Item ID</label>
+  <div class="col-md-4">
+  <input id="item_id" name="i1" placeholder="Item ID" class="form-control input-md" required="" type="text">
+
+  </div>
+</div><br>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="item_name">Item NAME</label>
+  <div class="col-md-4">
+  <input id="item_name" name="i2" placeholder="Item NAME" class="form-control input-md" required="" type="text">
+
+  </div>
+</div><br>
+
+
+
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Item_categorie">Item CATEGORY</label>
+  <div class="col-md-4">
+    <select id="Item_categorie" name="i3" class="form-control">
+        <option>SELECT</option>
+        <option>Veg</option>
+        <option>Non-Veg</option>
+        <option>Both</option>
+    </select>
+  </div>
+</div><br>
+    <!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Item_cost">Item Cost</label>
+  <div class="col-md-4">
+    <select id="Item_cost" name="i4" class="form-control">
+        <option>SELECT</option>
+        <option>150Plate</option>
+        <option>200Plate</option>
+        <option>300Plate</option>
+        <option>350Plate</option>
+        <option>400Plate</option>
+    </select>
+  </div>
+</div><br>
+
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4" align="center">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add</button>
+  </div>
+  </div>
+</fieldset>
+</form>
+<table  align="center" border="1">
+    <tr>
+        <td>
+            <a href="/viewdetails/?type=veg_details">View Vegdetails</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href="/viewnonvegdetails/?type=nonvegdetails" >Non-VegDetails</a>
+        </td>
+    </tr>
+</table>
+{% if  type == "veg_details" %}
+<table align="center" border="2">
+    <tr>
+        <td><a href="">100 plate</a></td>
+        <td><a href="">200 plate</a></td>
+        <td><a href="">300 plate</a></td>
+        <td><a href="">350 plate</a></td>
+        <td><a href="">400 plate</a></td>
+
+    </tr>
+</table>
+{% endif %}
+{% if  type == "nonvegdetails" %}
+<table align="center" border="2">
+    <tr align="center">
+        <th colspan="7" > NON_Veg details</th>
+    </tr>
+    <tr>
+        <td><a href="">100 plate</a></td>
+        <td><a href="">200 plate</a></td>
+        <td><a href="">300 plate</a></td>
+        <td><a href="">350 plate</a></td>
+        <td><a href="">400 plate</a></td>
+
+    </tr>
+</table>
+{% endif %}
+
+
+

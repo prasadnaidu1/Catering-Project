@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% load staticfiles %}
+<link href="{% static 'css/UserRegistration.css'%}" rel="stylesheet">
+<form action="/eventdetails/" method="post">
+    {% csrf_token %}
+
+
+ <div class="row">
+      <div class="col-25">
+        <label for="foodtype"></label>
+      </div>
+      <div class="col-25">
+        <select id="foodtype" name="food">
+          <option value="Veg">Breakfast</option>
+          <option value="Non-Veg">Lunch</option>
+          <option value="Both">Dinner</option>
+
+        </select>
+      </div>
+    </div>
+
+ <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
